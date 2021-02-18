@@ -1,12 +1,29 @@
 *** Settings ***
 Documentation           Testar Selenium och RobotFrameworks.
+Resource                ../Resources/keywords.robot
 Library                 SeleniumLibrary
+Suite Setup              Begin Web Test
+Suite Teardown           End Web Test
+
+*** Variables ***
+${BROWSER}              chrome
+${URL}                  https://www.willys.se/
+${SEARCH_TERM}          kiwi
 
 *** Test Cases ***
 User can access website
     [Documentation]             Testar Willys hemsida.
     [Tags]                      Test 1
-    Open browser                about:blank     chrome
-    Go to                       https://www.willys.se/
-    Wait until Page Contains    Handla billig mat online
-    Close browser
+    Go to Web Page
+
+User can serch for a product
+    [Documentation]             Testar Willys hemsida.
+    [Tags]                      Test 2
+    Go to Web Page
+    Search for Product          kiwi
+
+User can search for another product
+    [Documentation]             Testar Willys hemsida.
+    [Tags]                      Test 3
+    Go to Web Page
+    Search for Product          hundgodis
