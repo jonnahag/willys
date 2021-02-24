@@ -8,7 +8,6 @@ Suite Teardown           End Web Test
 *** Variables ***
 ${BROWSER}              chrome
 ${URL}                  https://www.willys.se/
-${SEARCH_TERM}          kiwi
 
 *** Test Cases ***
 User can access website
